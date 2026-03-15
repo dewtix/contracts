@@ -1,14 +1,15 @@
-name: Publish
+name: Publish NPM Package
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   publish:
     name: Publish Job
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,10 +21,13 @@ jobs:
           registry-url: "https://registry.npmjs.org/"
 
       - name: Install protoc
-        run: sudo apt-get update && sudo atp-get install -y protobuf-compiler
+        run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
 
       - name: Install deps
         run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn run build
 
       - name: Generate TS Protobuf
         run: yarn run generate

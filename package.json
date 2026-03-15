@@ -4,7 +4,6 @@
   "description": "Protobuf defs and gen ts",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
     "generate": "protoc -I ./proto ./proto/*.proto --ts_proto_out=./gen --ts_proto_opt=nestJs=true,package=omit"
   },
   "files": [

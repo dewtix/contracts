@@ -1,6 +1,6 @@
 {
   "name": "@dewtix/contracts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Protobuf defs and gen ts",
   "main": "index.js",
   "scripts": {

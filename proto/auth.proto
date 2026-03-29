@@ -2,15 +2,18 @@ syntax = "proto3";
 
 package auth.v1;
 
+import "google/protobuf/empty.proto";
+
 service AuthService {
 	rpc SendOtp (SendOtpRequest) returns (SendOtpResponse);
 	rpc VerifyOtp (VerifyOtpRequest) returns (VerifyOtpResponse);
-
 }
+
+
 message SendOtpRequest {
 	string identifier = 1;
 	string type = 2;
-}   
+}
 
 message SendOtpResponse {
 	bool ok = 1;

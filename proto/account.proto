@@ -6,6 +6,8 @@ service AccountService {
 	rpc GetAccount (GetAccountRequest) returns (GetAccountResponse);
 	rpc InitEmailChange (InitEmailChangeRequest) returns (InitEmailChangeResponse);
 	rpc ConfirmEmailChange (ConfirmEmailChangeRequest) returns (ConfirmEmailChangeResponse);
+	rpc InitPhoneChange (InitPhoneChangeRequest) returns (InitPhoneChangeResponse);
+	rpc ConfirmPhoneChange (ConfirmPhoneChangeRequest) returns (ConfirmPhoneChangeResponse);
 
 }
 

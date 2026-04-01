@@ -25,3 +25,40 @@ message GetAccountResponse {
 	Role role = 6;
 }
 
+message InitEmailChangeRequest {
+	string email = 1;
+	string user_id = 2;
+}
+
+message InitEmailChangeResponse {
+	bool ok = 1;
+}
+
+message ConfirmEmailChangeRequest {
+	string email = 1;
+	string code = 2;
+	string user_id = 3;
+}
+
+message ConfirmEmailChangeResponse {
+	bool ok = 1;
+}
+
+message InitPhoneChangeRequest {
+	string phone = 1;
+	string user_id = 2;
+}
+
+message InitPhoneChangeResponse {
+	bool ok = 1;
+}
+
+message ConfirmPhoneChangeRequest {
+	string phone = 1;
+	string code = 2;
+	string user_id = 3;
+}
+
+message ConfirmPhoneChangeResponse {
+	bool ok = 1;
+}

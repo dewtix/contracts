@@ -1,9 +1,19 @@
 {
   "name": "@dewtix/contracts",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Protobuf defs and gen ts",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./gen/ts/auth": {
+      "types": "./gen/ts/auth.d.ts",
+      "default": "./gen/ts/auth.js"
+    }
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "generate": "protoc -I ./proto ./proto/*.proto --ts_proto_out=./gen --ts_proto_opt=nestJs=true,package=omit"

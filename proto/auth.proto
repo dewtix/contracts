@@ -53,10 +53,6 @@ message TelegramInitResponse {
 	string url = 1;
 }
 
-message TelegramCompleteRequest {
-	string session_id = 1;
-	string phone = 2;
-}
 
 message TelegramVerifyResponse {
 	oneof result {
@@ -65,6 +61,12 @@ message TelegramVerifyResponse {
 		string refresh_token = 3;
 	}
 }
+
+message TelegramCompleteRequest {
+	string session_id = 1;
+	string phone = 2;
+}
+
 
 message TelegramCompleteResponse {
 	string session_id = 1;

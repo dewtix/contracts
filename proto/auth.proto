@@ -8,12 +8,12 @@ service AuthService {
 	rpc SendOtp (SendOtpRequest) returns (SendOtpResponse);
 	rpc VerifyOtp (VerifyOtpRequest) returns (VerifyOtpResponse);
 	rpc Refresh (RefreshRequest) returns (RefreshResponse);
+
 	rpc TelegramInit (google.protobuf.Empty) returns (TelegramInitResponse);
 	rpc TelegramVerify (TelegramVerifyRequest) returns  (TelegramVerifyResponse);
 	rpc TelegramComplete (TelegramCompleteRequest) returns (TelegramCompleteResponse);
 	rpc TelegramConsume (TelegramConsumeRequest) returns (TelegramConsumeResponse);
 }
-
 
 message SendOtpRequest {
 	string identifier = 1;
@@ -44,15 +44,13 @@ message RefreshResponse {
 	string refresh_token = 2;
 }
 
-
-message TelegramVerifyRequest {
-	map<string, string> query = 1;
-}
-
 message TelegramInitResponse {
 	string url = 1;
 }
 
+message TelegramVerifyRequest {
+	map<string, string> query = 1;
+}
 
 message TelegramVerifyResponse {
 	oneof result {
@@ -66,7 +64,6 @@ message TelegramCompleteRequest {
 	string session_id = 1;
 	string phone = 2;
 }
-
 
 message TelegramCompleteResponse {
 	string session_id = 1;
